@@ -1,3 +1,4 @@
 module.exports.views = {
-	engine: 'jade',
+  engine: 'jade',
+  layout: 'layout'
 };

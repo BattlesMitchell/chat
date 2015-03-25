@@ -1,17 +1,58 @@
 doctype html
 html
-  head
-    title= title
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge, chrome=1")
+		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+			
+		meta(name="description", content="")
+		meta(name="keywords", content="")
 
-    // Viewport mobile tag for sensible mobile support
-    meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
+		title="Chat App"
+		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
 
-    block styles
+		//- css dependencies
+		link(type="text/css", href="/semantic/semantic.css", rel="stylesheet")
 
-  body
-    block body
+	body
+	.ui.grid
+		.computer.tablet.only.row
+			.ui.inverted.static.menu.navbar.page.grid
+				a.item.active Chat App
+	//
+		.mobile.only.row
+			.ui.fixed.inverted.navbar.menu
+				a.item.active Project Name
+				.right.menu.open
+					a.menu.item
+						i.reorder.icon
+			.ui.vertical.navbar.menu
+				a.active.item Home
+				.ui.item
+					.text Dropdown
+					.menu
+						a.item Action
+				.menu
+					a.active.item Thing
+	.ui.page.grid.main
+		.row
+			.ui.large.vertical.menu
+				a.item Inbox
+					.ui.teal.label 1
+				.item
+					.ui.icon.input
+						input(type="text", placeholder="Search chats...")
+						i.search.icon
+		block body
+	footer
+		include footer
 
-    // The linker searches for this tag and adds js.  If there's no linker, we point to sails.io.js
-    // SCRIPTS
-    // SCRIPTS END
+	//- js dependencies
+	script(type="text/javascript", src="/js/dependencies/sails.io.js")
+	script(type="text/javascript", src="/jquery/jquery.min.js")
+	script(type="text/javascript", src="/semantic/semantic.min.js")
 
+	script.
+		$(function () {
+			//$('.dropdown').dropdown();
+		});

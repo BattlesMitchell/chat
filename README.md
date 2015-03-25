@@ -1,10 +1,6 @@
 # Chat App
 
 ## Tasks
-- Implement [gulp system](https://scotch.io/tutorials/automate-your-tasks-easily-with-gulp-js) for client dependencies
-	- Compile JS into dependencies.js
-	- Get SASS working
-	- Get bower packages (jQuery, semantic, ...)
 - Finish user api
 	- Flush out model with final attributes
 - Design chat model
