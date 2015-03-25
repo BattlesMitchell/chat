@@ -1,2 +1,22 @@
 extends ./layout
 block body
+	.ui.grid
+		.row
+			.ui.inverted.static.menu.navbar.page.grid
+				a.item Chat App
+				.right.menu
+					a.item Logout
+
+		.ui.page.grid.main
+			.four.wide.column
+				.ui.large.vertical.menu
+					.header.item Chats
+					a.item F.A.P.H.A.R.D.
+						.ui.red.label 23
+					.item
+						.ui.icon.input
+							input(type="text", placeholder="Search chats...")
+							i.search.icon
+
+			.twelve.wide.column
+				.ui.segment

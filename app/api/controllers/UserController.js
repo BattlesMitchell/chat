@@ -23,9 +23,8 @@ module.exports = {
 					if (match) {
 
 						// setup session and return user information
-						req.session.user = user.id;
-						res.json(user);
-
+						req.session.user = user;
+						res.view('homepage');
 					} else {
 						if (req.session.user) req.session.user = null;
 						res.json({ error: invalidLoginMessage }, 400);
@@ -39,22 +38,20 @@ module.exports = {
 		});	
 	},
 
-	'new': function (req, res) {
-
-		// returns new.jade
-		res.view();
-	},
-
 	create: function (req, res) {
 
 		// attempt to create a new user
 		User.create(req.params.all(), function (err, user) {
 
 			// bad attempt
-			if (err) return;// next(err);
+			if (err) {
+				res.session.flash = {err: err};
+				return res.end();
+			}
 
 			// user created
 			res.json(user);
+			res.session.flash = {};
 		});
 	}
 };

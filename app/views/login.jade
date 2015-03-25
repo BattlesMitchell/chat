@@ -1,0 +1,59 @@
+extends ./layout
+block body
+	.ui.one.column.stackable.center.aligned.page.grid
+		.six.wide.column(style={"margin-top": "250px"})
+			.ui.segment
+				h1 Welcome!
+
+				if (false)
+					// form errors
+					
+				form.ui.form(action="/user/login", method="POST")
+					input(type="hidden", name="_csrf", value=_csrf)
+					.field
+						.ui.icon.input
+							input(type="text", name="email", placeholder="Enter your email address.")
+							i.user.icon
+					.field
+						.ui.icon.input
+							input(type="password", name="password", placeholder="Enter your password.")
+							i.lock.icon
+					.ui.buttons
+						button.ui.primary.button(type="submit") Login
+						.or
+						.ui.signup.button Sign up!
+	#signup.ui.modal
+		i.close.icon
+		.header Sign up
+		.content
+			if (false)
+				// form errors
+
+			form#signupForm.ui.form(action="/user/create", method="POST")
+				input(type="hidden", name="_csrf", value=_csrf)
+				.required.field
+					label Email
+					input(type="text", name="email", placeholder="What's your email address?")
+				.two.fields
+					.required.field
+						label Password
+						input(type="password", name="password", placeholder="Enter a password.")
+					.required.field
+						label Confirm Password
+						input(type="password", name="passwordConfirmation", placeholder="Please retype your password.")
+		.actions
+			#signupSubmit.ui.labeled.primary.icon.button
+				i.checkmark.icon
+				| Create account				
+			.ui.labeled.icon.cancel.button
+				i.cancel.icon
+				| Cancel
+	script.
+		$(function() {
+			$('.signup.button').click(function() {
+				$('#signup').modal('show');
+			});			
+			$('#signupSubmit').click(function() {
+				$('#signupForm').submit();
+			});
+		});

@@ -8,12 +8,6 @@ module.exports = {
 			required: true,
 			unique: true
 		},
-		name: {
-			type: 'text',
-			required: true,
-			minLength: 4,
-			maxLength: 30
-		},
 		password: {
 			type: 'text',
 			required: true,

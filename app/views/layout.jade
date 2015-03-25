@@ -14,45 +14,16 @@ html
 		//- css dependencies
 		link(type="text/css", href="/semantic/semantic.css", rel="stylesheet")
 
+		//- js dependencies
+		script(type="text/javascript", src="/js/dependencies/sails.io.js")
+		script(type="text/javascript", src="/jquery/jquery.min.js")
+		script(type="text/javascript", src="/semantic/semantic.min.js")
 	body
-	.ui.grid
-		.computer.tablet.only.row
-			.ui.inverted.static.menu.navbar.page.grid
-				a.item.active Chat App
-	//
-		.mobile.only.row
-			.ui.fixed.inverted.navbar.menu
-				a.item.active Project Name
-				.right.menu.open
-					a.menu.item
-						i.reorder.icon
-			.ui.vertical.navbar.menu
-				a.active.item Home
-				.ui.item
-					.text Dropdown
-					.menu
-						a.item Action
-				.menu
-					a.active.item Thing
-	.ui.page.grid.main
-		.row
-			.ui.large.vertical.menu
-				a.item Inbox
-					.ui.teal.label 1
-				.item
-					.ui.icon.input
-						input(type="text", placeholder="Search chats...")
-						i.search.icon
 		block body
-	footer
-		include footer
-
-	//- js dependencies
-	script(type="text/javascript", src="/js/dependencies/sails.io.js")
-	script(type="text/javascript", src="/jquery/jquery.min.js")
-	script(type="text/javascript", src="/semantic/semantic.min.js")
+		footer
+			include footer
 
 	script.
-		$(function () {
+		$(function() {
 			//$('.dropdown').dropdown();
 		});
