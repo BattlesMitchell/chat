@@ -1,14 +1,22 @@
+<% if (errors) {%>
+  <% errors.forEach(function (error) { %>
+    <%= __(error) %>
+  <% }) %>
+<% } %>
+
+<form role="form" action="/auth/local/register" method="post">
+  <input type="text" name="username" placeholder="Username">
+  <input type="text" name="email" placeholder="Email">
+  <input type="password" name="password" placeholder="Password">
+  <button type="submit">Sign up</button>
+</form>
 extends ./layout
 block body
 	.ui.one.column.stackable.center.aligned.page.grid
 		.six.wide.column(style={"margin-top": "250px"})
 			.ui.segment
 				h1 Welcome!
-
-				if (false)
-					// form errors
-					
-				form.ui.form(action="/user/login", method="POST")
+				form.ui.form(action="/auth/local", method="POST")
 					input(type="hidden", name="_csrf", value=_csrf)
 					.field
 						.ui.icon.input
@@ -26,10 +34,12 @@ block body
 		i.close.icon
 		.header Sign up
 		.content
-			if (false)
-				// form errors
+			if (errors)
+				ul
+					each error in errors
+						li= error
 
-			form#signupForm.ui.form(action="/user/create", method="POST")
+			form#signupForm.ui.form(action="/auth/local/register", method="POST")
 				input(type="hidden", name="_csrf", value=_csrf)
 				.required.field
 					label Email

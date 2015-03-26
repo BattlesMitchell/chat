@@ -1,22 +1,153 @@
 extends ./layout
 block body
 	.ui.grid
+
+		//- nav bar
 		.row
 			.ui.inverted.static.menu.navbar.page.grid
 				a.item Chat App
 				.right.menu
-					a.item Logout
+					a(href="/logout").item Logout
 
+		//- main content
 		.ui.page.grid.main
+
+			//- chat listing
 			.four.wide.column
-				.ui.large.vertical.menu
-					.header.item Chats
-					a.item F.A.P.H.A.R.D.
-						.ui.red.label 23
+				.ui.large.vertical.fluid.menu
+					a.active.item Database Group
+						.ui.red.label 23					
+					a.item Salty Sydney Saloon
+						.ui.red.label 12
 					.item
+						a(data-modal="new").ui.positive.labeled.fluid.icon.button
+							i.asterisk.icon
+							| New group
+
+					//- .item
 						.ui.icon.input
 							input(type="text", placeholder="Search chats...")
 							i.search.icon
 
-			.twelve.wide.column
+			//- the chat
+			.eight.wide.column
 				.ui.segment
+
+					//- group info
+					h1.left.aligned Database Group
+					.ui.divider
+
+					//- the feed
+					.ui.feed
+						br
+						br
+						br
+						br
+						br
+						br
+						br
+						h5 Chat here...
+						br
+						br
+						br
+						br
+						br
+						br
+						br
+						br
+						br
+						br
+						br
+
+					//- message entry
+					.ui.divider
+					form.ui.form
+						.ui.action.input
+							input(type="text", placeholder="Send message...")
+							.ui.primary.labeled.icon.button
+								i.send.icon
+								| Send
+					div(style={"margin-top": "10px", float: "right"})
+						.two.buttons
+							a(data-modal="photo").ui.labeled.icon.button Send photo
+								i.photo.icon
+							a(data-modal="event").ui.labeled.icon.button Add event
+								i.calendar.outline.icon
+
+
+			//- group commands
+			.four.wide.column
+				.ui.large.vertical.fluid.menu
+
+					//- members section
+					.item
+						.ui.list
+							.item
+								image(src="https://placekitten.com/g/50/50").ui.top.aligned.avatar.image
+								.content
+									.header
+										a Conner Ruhl
+										a
+											i.remove.icon
+									i.green.circle.icon
+									| online
+
+							.item
+								image(src="https://placekitten.com/g/125/125").ui.top.aligned.avatar.image
+								.content
+									.header
+										a Mitch Battles
+										a
+											i.remove.icon
+									i.green.circle.icon
+									| online
+							.item
+								image(src="https://placekitten.com/g/75/75").ui.top.aligned.avatar.image
+								.content
+									.header
+										a Josh Ehrich
+										a
+											i.remove.icon
+									i.grey.thin.circle.icon
+									| last seen 22m ago
+					.item
+						a(data-modal="add").ui.positive.labeled.fluid.icon.button
+							i.plus.icon
+							| Add someone
+
+				//- actions section
+				.ui.large.vertical.fluid.menu
+
+					a(data-modal="gallery").left.item Gallery
+						i.photo.icon
+					a(data-modal="popular").left.item Popular
+						i.heart.icon
+					a(data-modal="events").left.item Events
+						i.calendar.icon
+					a(data-modal="settings").left.item Settings
+						i.settings.icon
+					.item
+						a(data-modal="leave").ui.negative.labeled.fluid.icon.button
+							i.reply.icon
+							| Leave chat
+	//- new group
+	include modals/new
+
+	//- message actions
+	include modals/photo
+	include modals/event
+
+	//- group actions
+	include modals/add
+	include modals/gallery
+	include modals/popular
+	include modals/events
+	include modals/settings
+	include modals/leave
+
+	script.
+		$(function () {
+			$('a[data-modal]').click(function() {
+				$('.' + $(this).attr('data-modal') + '.modal').modal('show');
+			});
+		});
