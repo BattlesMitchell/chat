@@ -1,0 +1,42 @@
+extends ./../layout
+block body
+	.ui.grid
+
+		//- nav bar
+		include navbar
+
+		//- main content
+		.ui.page.grid.main
+
+			//- page body
+			include chatLeftMenus
+			include chatMiddlePanel
+			include chatRightMenus
+			
+	//- navbar modals
+	include modals/about
+	
+	//- new group
+	include modals/new
+
+	//- message actions
+	include modals/photo
+	include modals/event
+
+	//- member actions
+	include modals/add
+	include modals/remove
+	include modals/memberStats
+
+	//- group actions
+	include modals/gallery
+	include modals/popular
+	include modals/events
+	include modals/settings
+	include modals/stats
+	include modals/leave
+
+	script.
+		$(function() {
+			
+		});

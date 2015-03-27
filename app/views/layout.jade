@@ -25,5 +25,16 @@ html
 
 	script.
 		$(function() {
-			//$('.dropdown').dropdown();
+
+			// set up modal showers
+			$('.ui.modal').modal({ duration: 150 });
+			$('a[data-modal]').click(function() {
+				$('.' + $(this).attr('data-modal') + '.modal').modal('show');
+			});
+
+			// set up popups
+			$('[data-content]').popup({ duration: 100 });			
+
+			// set up popups
+			$('.ui.dropdown').dropdown({ on: 'hover', duration: 100 });
 		});

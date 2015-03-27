@@ -1,0 +1,75 @@
+.four.wide.column
+
+	//- members section
+	.ui.small.vertical.fluid.menu
+		.item
+			.ui.list
+				.item(data-content="Group Creator")
+					image(src="https://placekitten.com/g/50/50").ui.top.aligned.avatar.image
+					.content
+						.header
+							| Conner Ruhl
+							i.yellow.star.icon
+						i.green.circle.icon
+						| online
+
+				.item
+					image(src="https://placekitten.com/g/125/125").ui.top.aligned.avatar.image
+					.content
+						.header
+							| Mitch Battles
+							a(data-modal="remove")
+								i.remove.icon
+						i.green.circle.icon
+						| online
+		.item
+			.ui.list
+				.item
+					image(src="https://placekitten.com/g/110/110").ui.top.aligned.avatar.image
+					.content
+						.header
+							| Josh Ehrich
+							a(data-modal="remove")
+								i.remove.icon
+						i.grey.thin.circle.icon
+						| last seen 22m ago
+				.item
+					image(src="https://placekitten.com/g/65/65").ui.top.aligned.avatar.image
+					.content
+						.header
+							| Some Guy
+							a(data-modal="remove")
+								i.remove.icon
+						i.grey.thin.circle.icon
+						| last seen two days ago
+				.item
+					image(src="https://placekitten.com/g/25/25").ui.top.aligned.avatar.image
+					.content
+						.header
+							| Another Dude
+							a(data-modal="remove")
+								i.remove.icon
+						i.grey.thin.circle.icon
+						| last seen a week ago
+		.item
+			.two.buttons
+
+				a(data-modal="add").ui.small.positive.icon.button
+					i.add.icon
+				a(data-modal="memberStats").ui.small.basic.labeled.icon.button
+					i.pie.chart.icon
+					| Member stats
+
+	//- actions section
+	.ui.large.vertical.fluid.menu
+
+		a(data-modal="gallery").left.item Gallery
+			i.grid.layout.icon
+		a(data-modal="popular").left.item Popular
+			i.thumbs.up.icon
+		a(data-modal="events").left.item Events
+			i.calendar.icon
+		a(data-modal="stats").left.item Stats
+			i.line.chart.icon
+		a(data-modal="settings").left.item Settings
+			i.settings.icon

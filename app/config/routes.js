@@ -31,7 +31,7 @@ module.exports.routes = {
 	*                                                                          *
 	***************************************************************************/
 
-	'/': { view: 'homepage' },
+	'/': { view: 'chat/index' },
 
 	/*
 	'get /login': 'AuthController.login',
