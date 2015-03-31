@@ -1,0 +1,38 @@
+#chatPanel.eight.wide.column
+	.ui.segment
+
+		//- group info
+		h1.left.aligned Database Group
+		.ui.divider
+
+		//- the feed
+		#chatFeed.ui.comments
+			.comment
+				.avatar
+					img(src="https://placekitten.com/g/50/50").ui.circular.image
+				.content
+					span.author Conner Ruhl
+					.metadata
+						span.date Today at 5:42PM
+					.text
+						| Hello, world!
+					.actions
+						a.like
+							i.thumbs.outline.up.icon
+							| 10
+
+		//- message entry
+		.ui.divider
+		form.ui.form
+			.ui.large.action.input
+				input(type="text", placeholder="Send message...")
+				.ui.large.primary.labeled.icon.button
+					i.send.icon
+					| Send
+
+		div(style={"margin-top": "10px", float: "right"})
+			.two.buttons
+				a(data-modal="photo").ui.basic.labeled.icon.button Send photo
+					i.photo.icon
+				a(data-modal="event").ui.basic.labeled.icon.button Add event
+					i.calendar.outline.icon

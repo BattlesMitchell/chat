@@ -9,9 +9,9 @@ block body
 		.ui.page.grid.main
 
 			//- page body
-			include chatLeftMenus
-			include chatMiddlePanel
-			include chatRightMenus
+			include leftColumn
+			include middleColumn
+			include rightColumn
 			
 	//- navbar modals
 	include modals/about
@@ -36,6 +36,7 @@ block body
 	include modals/stats
 	include modals/leave
 
+	script(type="text/javascript", src="/js/chat.js")
 	script.
 		$(function() {
 			
